@@ -441,48 +441,32 @@ span {
     padding-top: .5rem;
 }
 
-/* ====== Skills Section ====== */
+/* Skills Section */
 .skills {
     min-height: auto;
     padding-bottom: 7rem;
     background: var(--second-bg-color);
+    padding: 5rem 2rem;
 }
 
-/* Heading animation */
+/* Heading with slide-in animation */
 .skills h2 {
     display: inline-block;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50px);
-    margin-bottom: 3rem;
+    transform: translateX(-50px);
     opacity: 0;
     animation: slideIn 1s forwards;
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 .skills h2 span.animate {
     display: inline-block;
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: spanSlide 0.6s forwards;
-    animation-delay: 0.6s;
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-@keyframes spanSlide {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 /* Row layout */
-.skills .skills-row {
+.skills-row {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -491,27 +475,17 @@ span {
 /* Columns */
 .skills-column {
     flex: 1;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.8s forwards;
 }
 
-.skills-column.left-column {
-    animation-delay: 0.4s;
-}
-
-.skills-column.right-column {
-    animation-delay: 0.6s;
-}
-
-/* Left Column: Languages & Technologies */
-.left-column .skills-box {
+/* Single large rectangle for each column */
+.skills-box {
     border: 0.2rem solid var(--main-color);
     border-radius: 0.6rem;
-    padding: 1.5rem;
-    background: #222; /* Dark background */
+    padding: 2rem;
+    overflow: hidden;
 }
 
+/* Left Column: list of languages */
 .left-column .skills-content p {
     font-size: 1.6rem;
     font-weight: bold;
@@ -520,56 +494,40 @@ span {
 }
 
 /* Right Column: Projects */
-.right-column .skills-box {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.right-column .project-box {
-    border: 0.2rem solid var(--main-color);
-    border-radius: 0.6rem;
-    padding: 1.5rem;
-    background: #111;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.right-column .project-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.right-column .project-box h3 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.right-column .project-box p {
-    font-size: 1rem;
-    color: #bbb;
+.right-column .skills-content h3 {
+    font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--main-color);
 }
 
-.right-column .project-box .btn {
+.right-column .projects-list p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ddd;
+}
+
+/* GitHub button */
+.right-column .projects-list .btn {
     display: inline-block;
-    padding: 0.5rem 1.2rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
     background: #007bff;
     color: #fff;
     border-radius: 0.4rem;
     text-decoration: none;
-    transition: background 0.3s ease;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.right-column .project-box .btn:hover {
+.right-column .projects-list .btn:hover {
     background: #0056b3;
 }
 
-/* Fade-up animation for columns */
-@keyframes fadeUp {
+/* Heading animation keyframes */
+@keyframes slideIn {
     to {
+        transform: translateX(0);
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -578,11 +536,8 @@ span {
     .skills-row {
         flex-direction: column;
     }
-
-    .left-column, .right-column {
-        width: 100%;
-    }
 }
+
 
 
 .contact {
