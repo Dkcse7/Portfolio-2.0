@@ -34,12 +34,23 @@
     </header>
 
    <!-- home section design -->
-<section class="home show-animate" id="home">
+<section class="home show-animate" id="home" style="position:relative; width:100%; min-height:100vh;">
 
-    <!-- Full-width image -->
-    <img src="Home.jpeg" alt="ERROR!" style="width:100%; height:auto; display:block;">
+    <!-- Full-width background image wrapper -->
+    <div style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url('Home.jpeg');
+        background-size: cover;
+        background-position: center;
+        z-index:1;
+    "></div>
 
-    <div class="home-content">
+    <!-- Content on top of image -->
+    <div class="home-content" style="position:relative; z-index:2; padding:50px; max-width:1200px; margin:auto;">
         <h1>Hi, I'm <span>Digvijay Kharade</span><span class="animate" style="--i:2;"></span></h1>
         <div class="text-animate">
             <h3>AI Engineer </h3>
@@ -59,17 +70,18 @@
         </div>
     </div>
 
-    <div class="home-sci">
+    <div class="home-sci" style="position:relative; z-index:2;">
         <a href="#"><i class='bx bxl-facebook'></i></a>
         <a href="#"><i class='bx bxl-twitter'></i></a>
         <a href="#"><i class='bx bxl-linkedin'></i></a>
         <span class="animate" style="--i:6;"></span>
     </div>
 
-    <div class="home-imgHover"></div>
-    <span class="animate home-img" style="--i:7;"></span>
+    <div class="home-imgHover" style="position:relative; z-index:2;"></div>
+    <span class="animate home-img" style="--i:7; position:relative; z-index:2;"></span>
 
 </section>
+
 
     <!-- about section design -->
     <section class="about" id="about">
